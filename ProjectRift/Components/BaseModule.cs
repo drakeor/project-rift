@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectRift.Components
 {
-    public class BaseModule : IBasicObject, IModule
+    public class BaseModule : IModule
     {
         public BaseModule()
         {

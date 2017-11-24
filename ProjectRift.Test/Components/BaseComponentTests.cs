@@ -15,7 +15,7 @@ namespace ProjectRift.Components.Tests
         /// Must be greater than zero
         /// </summary>
         [Test()]
-        public void BaseComponent_GetBaseValueTest()
+        public void GetBaseValueTest()
         {
             BaseModule baseComponent = new BaseModule();
             Assert.AreNotEqual(0, baseComponent.GetBaseValue());
@@ -25,7 +25,7 @@ namespace ProjectRift.Components.Tests
         /// Must be greater than zero
         /// </summary>
         [Test()]
-        public void BaseComponent_GetCargoSizeTest()
+        public void GetCargoSizeTest()
         {
             BaseModule baseComponent = new BaseModule();
             Assert.AreNotEqual(0, baseComponent.GetCargoSize());
@@ -35,7 +35,7 @@ namespace ProjectRift.Components.Tests
         /// Needs a default description
         /// </summary>
         [Test()]
-        public void BaseComponent_GetDescriptionTest()
+        public void GetDescriptionTest()
         {
             BaseModule baseComponent = new BaseModule();
             Assert.AreNotEqual(0, baseComponent.GetDescription().Length);
@@ -45,7 +45,7 @@ namespace ProjectRift.Components.Tests
         /// Needs a default name
         /// </summary>
         [Test()]
-        public void BaseComponent_GetNameTest()
+        public void GetNameTest()
         {
             BaseModule baseComponent = new BaseModule();
             Assert.AreNotEqual(0, baseComponent.GetName().Length);
@@ -55,7 +55,7 @@ namespace ProjectRift.Components.Tests
         /// Passthru ONLY the current value
         /// </summary>
         [Test()]
-        public void BaseComponent_CalculateArmorDamageTest()
+        public void CalculateArmorDamageTest()
         {
             BaseModule baseComponent = new BaseModule();
             Assert.AreEqual(100, baseComponent.CalculateArmorDamage(50, 100));
@@ -65,7 +65,7 @@ namespace ProjectRift.Components.Tests
         /// Passthru ONLY the current value
         /// </summary>
         [Test()]
-        public void BaseComponent_CalculateHealthDamageTest()
+        public void CalculateHealthDamageTest()
         {
             BaseModule baseComponent = new BaseModule();
             Assert.AreEqual(100, baseComponent.CalculateArmorDamage(50, 100));
@@ -75,7 +75,7 @@ namespace ProjectRift.Components.Tests
         /// Passthru ONLY the current value
         /// </summary>
         [Test()]
-        public void BaseComponent_CalculateShieldDamageTest()
+        public void CalculateShieldDamageTest()
         {
             BaseModule baseComponent = new BaseModule();
             Assert.AreEqual(100, baseComponent.CalculateArmorDamage(50, 100));

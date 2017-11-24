@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace ProjectRift.Entities.Ships
 {
-    public interface IShip
+    public interface IShip : IWorldObject
     {
         int GetCurrentCargoSpace();
         int GetMaxCargoSpace();
 
         Boolean HasCargoSpace(int requestedSize);
-        Boolean AddComponent(IModule component);
+        Boolean AddModule(IModule component);
     }
 }

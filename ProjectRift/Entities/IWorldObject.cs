@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectRift.Entities
 {
-    public interface IWorldObject
+    public interface IWorldObject : IBasicObject
     {
         int GetHealth();
         int GetMaxHealth();

@@ -8,81 +8,114 @@ using System.Threading.Tasks;
 
 namespace ProjectRift.Entities.Ships
 {
-    public class BaseShip : IShip, IBasicObject, IWorldObject
+    public class BaseShip : IShip
     {
-        public bool AddComponent(IModule component)
+        protected List<IModule> modules = new List<IModule>();
+        int currentHealth;
+        int currentArmor;
+        int currentShields;
+
+        public BaseShip()
         {
-            throw new NotImplementedException();
+            currentHealth = GetMaxHealth();
+            currentArmor = GetMaxArmor();
+            currentShields = GetMaxShield();
+        }
+
+        public bool AddModule(IModule module)
+        {
+            if(HasCargoSpace(module.GetCargoSize()))
+            {
+                modules.Add(module);
+                return true;
+            }
+            return false;
         }
 
         public int GetArmor()
         {
-            throw new NotImplementedException();
+            return currentArmor;
         }
 
         public long GetBaseValue()
         {
-            throw new NotImplementedException();
+            return 100;
         }
 
         public int GetCargoSize()
         {
-            throw new NotImplementedException();
+            return 100;
         }
 
         public int GetCurrentCargoSpace()
         {
-            throw new NotImplementedException();
+            var currentCount = 0;
+            modules.ForEach(x => currentCount += x.GetCargoSize());
+            return currentCount;
         }
 
         public string GetDescription()
         {
-            throw new NotImplementedException();
+            return "No Description";
         }
 
         public int GetHealth()
         {
-            throw new NotImplementedException();
+            return currentHealth;
         }
 
         public int GetMaxArmor()
         {
-            throw new NotImplementedException();
+            return 100;
         }
 
-        public int GetMaxCargoSpace()
+        public virtual int GetMaxCargoSpace()
         {
-            throw new NotImplementedException();
+            return 10;
         }
 
         public int GetMaxHealth()
         {
-            throw new NotImplementedException();
+            return 100;
         }
 
         public int GetMaxShield()
         {
-            throw new NotImplementedException();
+            return 100;
         }
 
         public string GetName()
         {
-            throw new NotImplementedException();
+            return "Unnamed";
         }
 
         public int GetShield()
         {
-            throw new NotImplementedException();
+            return currentShields;
         }
 
         public bool HasCargoSpace(int requestedSize)
         {
-            throw new NotImplementedException();
+            return ((requestedSize + GetCurrentCargoSpace()) <= GetMaxCargoSpace());
         }
 
         public bool ProcessDamage(int general, int shieldDam, int armorDam, int hullDam)
         {
-            throw new NotImplementedException();
+            // Keep shields at 0 or above
+            currentShields -= shieldDam;
+            currentShields = Math.Max(0, currentShields);
+
+            // Keep armor at 0 or above
+            currentArmor -= armorDam;
+            currentArmor = Math.Max(0, currentArmor);
+
+            // Hull can go negative to show how screwed they are
+            currentHealth -= hullDam;
+
+            if (currentHealth <= 0)
+                return true;
+
+            return false;
         }
     }
 }

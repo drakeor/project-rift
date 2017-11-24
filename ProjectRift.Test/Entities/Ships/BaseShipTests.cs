@@ -17,10 +17,10 @@ namespace ProjectRift.Entities.Ships.Tests
         /// since the base ship has no components by default
         /// </summary>
         [Test()]
-        public void AddComponentTest()
+        public void AddModuleTest()
         {
             BaseShip baseShip = new BaseShip();
-            Assert.IsTrue(baseShip.AddComponent(new BaseModule()));
+            Assert.IsTrue(baseShip.AddModule(new BaseModule()));
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace ProjectRift.Entities.Ships.Tests
         public void GetCurrentCargoSpaceTest()
         {
             BaseShip baseShip = new BaseShip();
-            Assert.Greater(baseShip.GetCurrentCargoSpace(), 0);
+            Assert.Greater(baseShip.GetCurrentCargoSpace(), -1);
         }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace ProjectRift.Entities.Ships.Tests
         public void ProcessDamageTest_NoDamage()
         {
             BaseShip baseShip = new BaseShip();
-            Assert.IsTrue(baseShip.ProcessDamage(0, 0, 0, 0));
+            Assert.IsFalse(baseShip.ProcessDamage(0, 0, 0, 0));
         }
 
         /// <summary>
