@@ -34,37 +34,57 @@ namespace ProjectRift.Components.Tests
         public void BaseComponent_GetCargoSizeTest()
         {
             BaseComponent baseComponent = new BaseComponent();
-            Assert.AreNotEqual(0, baseComponent.GetBaseValue());
+            Assert.AreNotEqual(0, baseComponent.GetCargoSize());
         }
 
+        /// <summary>
+        /// Needs a default description
+        /// </summary>
         [Test()]
         public void BaseComponent_GetDescriptionTest()
         {
-            Assert.Fail();
+            BaseComponent baseComponent = new BaseComponent();
+            Assert.AreNotEqual(0, baseComponent.GetDescription().Length);
         }
 
+        /// <summary>
+        /// Needs a default name
+        /// </summary>
         [Test()]
         public void BaseComponent_GetNameTest()
         {
-            Assert.Fail();
+            BaseComponent baseComponent = new BaseComponent();
+            Assert.AreNotEqual(0, baseComponent.GetName().Length);
         }
 
+        /// <summary>
+        /// Passthru ONLY the current value
+        /// </summary>
         [Test()]
         public void BaseComponent_CalculateArmorDamageTest()
         {
-            Assert.Fail();
+            BaseComponent baseComponent = new BaseComponent();
+            Assert.AreEqual(100, baseComponent.CalculateArmorDamage(50, 100));
         }
 
+        /// <summary>
+        /// Passthru ONLY the current value
+        /// </summary>
         [Test()]
         public void BaseComponent_CalculateHealthDamageTest()
         {
-            Assert.Fail();
+            BaseComponent baseComponent = new BaseComponent();
+            Assert.AreEqual(100, baseComponent.CalculateArmorDamage(50, 100));
         }
 
+        /// <summary>
+        /// Passthru ONLY the current value
+        /// </summary>
         [Test()]
         public void BaseComponent_CalculateShieldDamageTest()
         {
-            Assert.Fail();
+            BaseComponent baseComponent = new BaseComponent();
+            Assert.AreEqual(100, baseComponent.CalculateArmorDamage(50, 100));
         }
     }
 }

@@ -16,37 +16,37 @@ namespace ProjectRift.Components
 
         public long GetBaseValue()
         {
-            throw new NotImplementedException();
+            return 1000;
         }
 
         public int GetCargoSize()
         {
-            throw new NotImplementedException();
+            return 1;
         }
 
         public string GetDescription()
         {
-            throw new NotImplementedException();
+            return "No Description";
         }
 
         public string GetName()
         {
-            throw new NotImplementedException();
+            return "Unnamed";
         }
 
         public int CalculateArmorDamage(int baseValue, int currentValue)
         {
-            throw new NotImplementedException();
+            return currentValue;
         }
 
         public int CalculateHealthDamage(int baseValue, int currentValue)
         {
-            throw new NotImplementedException();
+            return currentValue;
         }
 
         public int CalculateShieldDamage(int baseValue, int currentValue)
         {
-            throw new NotImplementedException();
+            return currentValue;
         }
     }
 }
