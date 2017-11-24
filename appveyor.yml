@@ -1,5 +1,8 @@
 version: 1.0.{build}
 image: Visual Studio 2017
+configuration:
+- Debug
+- Release
 install:
 - ps: >-
     # Install MonoGame
@@ -18,5 +21,7 @@ before_build:
 build:
   verbosity: normal
 artifacts:
+- path: ProjectRift\bin\DesktopGL\AnyCPU\Debug\*
+  name: Binaries (Debug)
 - path: ProjectRift\bin\DesktopGL\AnyCPU\Release\*
   name: Binaries
