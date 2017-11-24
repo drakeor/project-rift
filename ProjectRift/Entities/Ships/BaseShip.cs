@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectRift.Components;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace ProjectRift.Entities.Ships
 {
     public class BaseShip : IShip, IBasicObject, IWorldObject
     {
-        public bool AddComponent(IComponent component)
+        public bool AddComponent(IModule component)
         {
             throw new NotImplementedException();
         }

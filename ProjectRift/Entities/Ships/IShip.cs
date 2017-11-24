@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectRift.Components;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,6 +14,6 @@ namespace ProjectRift.Entities.Ships
         int GetMaxCargoSpace();
 
         Boolean HasCargoSpace(int requestedSize);
-        Boolean AddComponent(IComponent component);
+        Boolean AddComponent(IModule component);
     }
 }

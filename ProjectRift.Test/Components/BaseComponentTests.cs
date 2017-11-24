@@ -11,19 +11,13 @@ namespace ProjectRift.Components.Tests
     [TestFixture()]
     public class BaseComponentTests
     {
-        [Test()]
-        public void BaseComponent_BaseComponentTest()
-        {
-            BaseComponent baseComponent = new BaseComponent();
-        }
-
         /// <summary>
         /// Must be greater than zero
         /// </summary>
         [Test()]
         public void BaseComponent_GetBaseValueTest()
         {
-            BaseComponent baseComponent = new BaseComponent();
+            BaseModule baseComponent = new BaseModule();
             Assert.AreNotEqual(0, baseComponent.GetBaseValue());
         }
 
@@ -33,7 +27,7 @@ namespace ProjectRift.Components.Tests
         [Test()]
         public void BaseComponent_GetCargoSizeTest()
         {
-            BaseComponent baseComponent = new BaseComponent();
+            BaseModule baseComponent = new BaseModule();
             Assert.AreNotEqual(0, baseComponent.GetCargoSize());
         }
 
@@ -43,7 +37,7 @@ namespace ProjectRift.Components.Tests
         [Test()]
         public void BaseComponent_GetDescriptionTest()
         {
-            BaseComponent baseComponent = new BaseComponent();
+            BaseModule baseComponent = new BaseModule();
             Assert.AreNotEqual(0, baseComponent.GetDescription().Length);
         }
 
@@ -53,7 +47,7 @@ namespace ProjectRift.Components.Tests
         [Test()]
         public void BaseComponent_GetNameTest()
         {
-            BaseComponent baseComponent = new BaseComponent();
+            BaseModule baseComponent = new BaseModule();
             Assert.AreNotEqual(0, baseComponent.GetName().Length);
         }
 
@@ -63,7 +57,7 @@ namespace ProjectRift.Components.Tests
         [Test()]
         public void BaseComponent_CalculateArmorDamageTest()
         {
-            BaseComponent baseComponent = new BaseComponent();
+            BaseModule baseComponent = new BaseModule();
             Assert.AreEqual(100, baseComponent.CalculateArmorDamage(50, 100));
         }
 
@@ -73,7 +67,7 @@ namespace ProjectRift.Components.Tests
         [Test()]
         public void BaseComponent_CalculateHealthDamageTest()
         {
-            BaseComponent baseComponent = new BaseComponent();
+            BaseModule baseComponent = new BaseModule();
             Assert.AreEqual(100, baseComponent.CalculateArmorDamage(50, 100));
         }
 
@@ -83,7 +77,7 @@ namespace ProjectRift.Components.Tests
         [Test()]
         public void BaseComponent_CalculateShieldDamageTest()
         {
-            BaseComponent baseComponent = new BaseComponent();
+            BaseModule baseComponent = new BaseModule();
             Assert.AreEqual(100, baseComponent.CalculateArmorDamage(50, 100));
         }
     }

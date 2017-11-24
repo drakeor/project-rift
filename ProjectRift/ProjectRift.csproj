@@ -42,7 +42,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Components\BaseComponent.cs" />
+    <Compile Include="Components\BaseModule.cs" />
     <Compile Include="Components\LightArmour.cs" />
     <Compile Include="Entities\IWorldObject.cs" />
     <Compile Include="Entities\Ships\BaseShip.cs" />
@@ -52,7 +52,7 @@
     <Compile Include="RiftGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Components\IComponent.cs" />
+    <Compile Include="Components\IModule.cs" />
     <Compile Include="Entities\Ships\IShip.cs" />
     <Compile Include="Entities\IBasicObject.cs" />
   </ItemGroup>

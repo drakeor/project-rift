@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectRift.Components
 {
-    public interface IComponent
+    public interface IModule
     {
         int CalculateShieldDamage(int baseValue, int currentValue);
         int CalculateArmorDamage(int baseValue, int currentValue);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectRift.Components
 {
-    public class LightArmour : BaseComponent
+    public class LightArmour : BaseModule
     {
 
     }
