@@ -101,6 +101,11 @@ namespace ProjectRift.Entities.Ships
 
         public bool ProcessDamage(int general, int shieldDam, int bleedThruDamage)
         {
+            // Max damage allowed is 1 billion
+            general = Math.Min(general, 1000000000);
+            shieldDam = Math.Min(shieldDam, 1000000000);
+            bleedThruDamage = Math.Min(bleedThruDamage, 1000000000);
+
             // Keep shields at 0 or above.
             // No bleedthru from shield-only weapons
             currentShields -= shieldDam;
