@@ -1,7 +1,5 @@
 version: 1.0.{build}
-image:
-- Visual Studio 2015
-- Visual Studio 2017
+image: Visual Studio 2017
 install:
 - ps: >-
     # Install MonoGame
@@ -20,5 +18,5 @@ before_build:
 build:
   verbosity: normal
 artifacts:
-- path: bin\$(configuration)\*
-  name: Binary
+- path: bin\*
+  name: Binaries
