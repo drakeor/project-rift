@@ -23,7 +23,7 @@ build:
   verbosity: minimal
 test_script:
 - ps: >-
-    nunit3-console ProjectRift.Test --result=myresults.xml;format=AppVeyor
+    nunit3-console ProjectRift.Test\bin\Debug\ProjectRift.Test.dll --result=myresults.xml;format=AppVeyor
 
     $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
 
