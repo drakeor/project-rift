@@ -9,6 +9,11 @@ namespace ProjectRift.Components
 {
     public class BaseComponent : IBasicObject, IComponent
     {
+        public BaseComponent()
+        {
+
+        }
+
         public long GetBaseValue()
         {
             throw new NotImplementedException();

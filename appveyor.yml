@@ -20,6 +20,15 @@ before_build:
 - cmd: nuget restore
 build:
   verbosity: normal
+before_test:
+- cmd: .\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:"ProjectRift.Test.dll -noshadow" -output:"coverage.xml" -filter:"+[ProjectRift*]* -[ProjectRift.Test*]*"
+after_test:
+- ps: >-
+    $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
+
+    Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh
+
+    bash codecov.sh -f "coverage.xml" -t f5a18a4a-89ac-4889-8d39-c587f23952ec
 artifacts:
 - path: ProjectRift\bin\DesktopGL\AnyCPU\Debug\*
   name: Binaries (Debug)
