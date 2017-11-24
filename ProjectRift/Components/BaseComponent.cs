@@ -29,17 +29,17 @@ namespace ProjectRift.Components
             throw new NotImplementedException();
         }
 
-        public int ProcessArmor(int baseValue, int currentValue)
+        public int CalculateArmorDamage(int baseValue, int currentValue)
         {
             throw new NotImplementedException();
         }
 
-        public int ProcessHealth(int baseValue, int currentValue)
+        public int CalculateHealthDamage(int baseValue, int currentValue)
         {
             throw new NotImplementedException();
         }
 
-        public int ProcessShields(int baseValue, int currentValue)
+        public int CalculateShieldDamage(int baseValue, int currentValue)
         {
             throw new NotImplementedException();
         }

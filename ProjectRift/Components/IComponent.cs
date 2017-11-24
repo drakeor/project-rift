@@ -8,8 +8,8 @@ namespace ProjectRift.Components
 {
     public interface IComponent
     {
-        int ProcessShields(int baseValue, int currentValue);
-        int ProcessArmor(int baseValue, int currentValue);
-        int ProcessHealth(int baseValue, int currentValue);
+        int CalculateShieldDamage(int baseValue, int currentValue);
+        int CalculateArmorDamage(int baseValue, int currentValue);
+        int CalculateHealthDamage(int baseValue, int currentValue);
     }
 }
