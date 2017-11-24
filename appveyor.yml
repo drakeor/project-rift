@@ -18,5 +18,5 @@ before_build:
 build:
   verbosity: normal
 artifacts:
-- path: bin\*
+- path: ProjectRift\bin\DesktopGL\AnyCPU\Release\*
   name: Binaries
