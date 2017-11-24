@@ -19,7 +19,8 @@ install:
 before_build:
 - cmd: nuget restore
 build:
-  verbosity: normal
+  project: ProjectRift.sln
+  verbosity: minimal
 before_test:
 - cmd: .\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:"ProjectRift.Test.dll -noshadow" -output:"coverage.xml" -filter:"+[ProjectRift*]* -[ProjectRift.Test*]*"
 after_test:
