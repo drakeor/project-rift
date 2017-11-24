@@ -8,6 +8,14 @@ namespace ProjectRift.Components
 {
     public class LightArmour : BaseModule
     {
+        public override string GetName()
+        {
+            return "Light Armour";
+        }
 
+        public override string GetDescription()
+        {
+            return "Weak Armor";
+        }
     }
 }

@@ -9,6 +9,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRift.Test", "Project
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRiftGameplay.Test", "ProjectRiftGameplay.Test\ProjectRiftGameplay.Test.csproj", "{91BD0A79-980A-4FFD-A139-84BF2DF46303}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{3C3EF245-5802-4287-915E-367E5B3E92B6}"
+	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wiki", "Wiki", "{1BFBC400-7314-4B42-AD45-2359180EB9A7}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\Design.md = Docs\Design.md
+		Docs\Ships.md = Docs\Ships.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

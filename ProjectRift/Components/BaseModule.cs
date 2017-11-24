@@ -9,11 +9,6 @@ namespace ProjectRift.Components
 {
     public class BaseModule : IModule
     {
-        public BaseModule()
-        {
-
-        }
-
         public long GetBaseValue()
         {
             return 1000;
@@ -24,27 +19,27 @@ namespace ProjectRift.Components
             return 1;
         }
 
-        public string GetDescription()
+        public virtual string GetDescription()
         {
             return "No Description";
         }
 
-        public string GetName()
+        public virtual string GetName()
         {
             return "Unnamed";
         }
 
-        public int CalculateArmorDamage(int baseValue, int currentValue)
+        public virtual int CalculateArmorDamage(int baseValue, int currentValue)
         {
             return currentValue;
         }
 
-        public int CalculateHealthDamage(int baseValue, int currentValue)
+        public virtual int CalculateHealthDamage(int baseValue, int currentValue)
         {
             return currentValue;
         }
 
-        public int CalculateShieldDamage(int baseValue, int currentValue)
+        public virtual int CalculateShieldDamage(int baseValue, int currentValue)
         {
             return currentValue;
         }
