@@ -64,7 +64,7 @@ namespace ProjectRift.Entities.Ships
             return currentHealth;
         }
 
-        public int GetMaxArmor()
+        public virtual int GetMaxArmor()
         {
             return 100;
         }
@@ -74,12 +74,12 @@ namespace ProjectRift.Entities.Ships
             return 10;
         }
 
-        public int GetMaxHealth()
+        public virtual int GetMaxHealth()
         {
             return 100;
         }
 
-        public int GetMaxShield()
+        public virtual int GetMaxShield()
         {
             return 100;
         }
@@ -99,23 +99,45 @@ namespace ProjectRift.Entities.Ships
             return ((requestedSize + GetCurrentCargoSpace()) <= GetMaxCargoSpace());
         }
 
-        public bool ProcessDamage(int general, int shieldDam, int armorDam, int hullDam)
+        public bool ProcessDamage(int general, int shieldDam, int bleedThruDamage)
         {
-            // Keep shields at 0 or above
+            // Keep shields at 0 or above.
+            // No bleedthru from shield-only weapons
             currentShields -= shieldDam;
             currentShields = Math.Max(0, currentShields);
 
-            // Keep armor at 0 or above
-            currentArmor -= armorDam;
+            // General damage bled thru shield
+            var dShieldHealth = general - currentShields;
+            if(dShieldHealth > 0)
+            {
+                general = general - currentShields;
+                currentShields = 0;
+            }
+            // Shields absorbed the full impact
+            else
+            {
+                currentShields = currentShields - general;
+                general = 0;
+            }
+
+            // Sum remaining damage
+            var hullDamage = bleedThruDamage + general;
+
+            // Impact armor first
+            var dHealth = hullDamage - currentArmor;
+            currentArmor -= hullDamage;
             currentArmor = Math.Max(0, currentArmor);
 
+            // If some damage leaked through the armor, affect the hull
             // Hull can go negative to show how screwed they are
-            currentHealth -= hullDam;
+            if(dHealth > 0)
+                currentHealth -= dHealth;
 
+            // Ship dies if health drops below 0
             if (currentHealth <= 0)
-                return true;
+                return false;
 
-            return false;
+            return true;
         }
     }
 }

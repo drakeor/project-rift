@@ -169,7 +169,7 @@ namespace ProjectRift.Entities.Ships.Tests
         public void ProcessDamageTest_NoDamage()
         {
             BaseShip baseShip = new BaseShip();
-            Assert.IsFalse(baseShip.ProcessDamage(0, 0, 0, 0));
+            Assert.IsTrue(baseShip.ProcessDamage(0, 0, 0));
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace ProjectRift.Entities.Ships.Tests
         public void ProcessDamageTest_MassiveDamage()
         {
             BaseShip baseShip = new BaseShip();
-            Assert.IsTrue(baseShip.ProcessDamage(int.MaxValue, int.MaxValue, int.MaxValue, int.MaxValue));
+            Assert.IsFalse(baseShip.ProcessDamage(int.MaxValue, int.MaxValue, int.MaxValue));
         }
     }
 }

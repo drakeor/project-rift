@@ -17,6 +17,6 @@ namespace ProjectRift.Entities
         int GetShield();
         int GetMaxShield();
 
-        bool ProcessDamage(int general, int shieldDam, int armorDam, int hullDam);
+        bool ProcessDamage(int general, int shieldDam, int bleedThruDamage);
     }
 }
