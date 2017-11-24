@@ -1,4 +1,15 @@
 version: 1.0.{build}
-image: Visual Studio 2017
+image:
+- Visual Studio 2015
+- Visual Studio 2017
+install:
+- ps: >-
+    # Install MonoGame
+
+    Write-Host ("Installing MonoGame...")
+
+    (New-Object Net.WebClient).DownloadFile('http://www.monogame.net/releases/v3.6/MonoGameSetup.exe', 'C:\MonoGameSetup.exe')
+
+    Start-Process -FilePath "C:\MonoGameSetup.exe" -ArgumentList "/S /v /qn"
 build:
   verbosity: minimal
