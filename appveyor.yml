@@ -21,15 +21,15 @@ before_build:
 build:
   project: ProjectRift.sln
   verbosity: minimal
-before_test:
-- cmd: .\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:"nunit3-console" -targetargs:"ProjectRift.Test.dll -noshadow" -output:"coverage.xml" -filter:"+[ProjectRift*]* -[ProjectRift.Test*]*"
-after_test:
+test_script:
 - ps: >-
+    nunit3-console ProjectRift.Test --result=myresults.xml;format=AppVeyor
+
     $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
 
     Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh
 
-    bash codecov.sh -f "coverage.xml" -t f5a18a4a-89ac-4889-8d39-c587f23952ec
+    bash codecov.sh -f "myresults.xml" -t f5a18a4a-89ac-4889-8d39-c587f23952ec
 artifacts:
 - path: ProjectRift\bin\DesktopGL\AnyCPU\Debug\*
   name: Binaries (Debug)
