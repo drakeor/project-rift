@@ -42,7 +42,13 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Components\BaseComponent.cs" />
+    <Compile Include="Components\LightArmour.cs" />
     <Compile Include="Entities\IWorldObject.cs" />
+    <Compile Include="Entities\Ships\BaseShip.cs" />
+    <Compile Include="Entities\Ships\Wasp.cs" />
+    <Compile Include="Factories\ComponentFactory.cs" />
+    <Compile Include="Factories\ShipFactory.cs" />
     <Compile Include="RiftGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,7 +116,6 @@
     <None Include="app.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Factories\" />
     <Folder Include="Shops\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
