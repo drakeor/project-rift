@@ -52,33 +52,33 @@ namespace ProjectRift.Components.Tests
         }
 
         /// <summary>
-        /// Passthru ONLY the current value
+        /// Has no modifier by default
         /// </summary>
         [Test()]
-        public void CalculateArmorDamageTest()
+        public void CalculateArmorTest()
         {
             BaseModule baseComponent = new BaseModule();
-            Assert.AreEqual(100, baseComponent.CalculateArmorDamage(50, 100));
+            Assert.AreEqual(0, baseComponent.GetArmorModifier());
         }
 
         /// <summary>
-        /// Passthru ONLY the current value
+        /// Has no modifier by default
         /// </summary>
         [Test()]
-        public void CalculateHealthDamageTest()
+        public void CalculateHealthTest()
         {
             BaseModule baseComponent = new BaseModule();
-            Assert.AreEqual(100, baseComponent.CalculateArmorDamage(50, 100));
+            Assert.AreEqual(0, baseComponent.GetArmorModifier());
         }
 
         /// <summary>
-        /// Passthru ONLY the current value
+        /// Has no modifier by default
         /// </summary>
         [Test()]
-        public void CalculateShieldDamageTest()
+        public void CalculateShieldTest()
         {
             BaseModule baseComponent = new BaseModule();
-            Assert.AreEqual(100, baseComponent.CalculateArmorDamage(50, 100));
+            Assert.AreEqual(0, baseComponent.GetArmorModifier());
         }
     }
 }

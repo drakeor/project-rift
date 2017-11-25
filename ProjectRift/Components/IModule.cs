@@ -9,8 +9,8 @@ namespace ProjectRift.Components
 {
     public interface IModule : IBasicObject
     {
-        int CalculateShieldDamage(int baseValue, int currentValue);
-        int CalculateArmorDamage(int baseValue, int currentValue);
-        int CalculateHealthDamage(int baseValue, int currentValue);
+        int GetShieldModifier();
+        int GetArmorModifier();
+        int GetHealthModifier();
     }
 }

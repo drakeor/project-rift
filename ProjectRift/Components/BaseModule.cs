@@ -29,19 +29,19 @@ namespace ProjectRift.Components
             return "Unnamed";
         }
 
-        public virtual int CalculateArmorDamage(int baseValue, int currentValue)
+        public virtual int GetArmorModifier()
         {
-            return currentValue;
+            return 0;
         }
 
-        public virtual int CalculateHealthDamage(int baseValue, int currentValue)
+        public virtual int GetHealthModifier()
         {
-            return currentValue;
+            return 0;
         }
 
-        public virtual int CalculateShieldDamage(int baseValue, int currentValue)
+        public virtual int GetShieldModifier()
         {
-            return currentValue;
+            return 0;
         }
     }
 }
