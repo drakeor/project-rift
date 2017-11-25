@@ -73,7 +73,7 @@ namespace ProjectRift.Entities.Ships
             return currentCount;
         }
 
-        public string GetDescription()
+        public virtual string GetDescription()
         {
             return "No Description";
         }
@@ -88,7 +88,7 @@ namespace ProjectRift.Entities.Ships
             return baseMaxArmor;
         }
 
-        public int GetMaxCargoSpace()
+        public virtual int GetMaxCargoSpace()
         {
             return 10;
         }
@@ -103,7 +103,7 @@ namespace ProjectRift.Entities.Ships
             return baseMaxShields;
         }
 
-        public string GetName()
+        public virtual string GetName()
         {
             return "Unnamed";
         }
@@ -121,31 +121,31 @@ namespace ProjectRift.Entities.Ships
         public bool ProcessDamage(int general, int shieldDam, int bleedThruDamage)
         {
             // Max damage allowed is 1 billion
-            general = Math.Min(general, 1000000000);
-            shieldDam = Math.Min(shieldDam, 1000000000);
-            bleedThruDamage = Math.Min(bleedThruDamage, 1000000000);
+            int damGeneral = Math.Min(general, 1000000000);
+            int damShield = Math.Min(shieldDam, 1000000000);
+            int damPierce = Math.Min(bleedThruDamage, 1000000000);
 
             // Keep shields at 0 or above.
             // No bleedthru from shield-only weapons
-            currentShields -= shieldDam;
+            currentShields -= damShield;
             currentShields = Math.Max(0, currentShields);
 
             // General damage bled thru shield
-            var dShieldHealth = general - currentShields;
+            var dShieldHealth = damGeneral - currentShields;
             if(dShieldHealth > 0)
             {
-                general = general - currentShields;
+                damGeneral = damGeneral - currentShields;
                 currentShields = 0;
             }
             // Shields absorbed the full impact
             else
             {
-                currentShields = currentShields - general;
-                general = 0;
+                currentShields = currentShields - damGeneral;
+                damGeneral = 0;
             }
 
             // Sum remaining damage
-            var hullDamage = bleedThruDamage + general;
+            var hullDamage = damPierce + damGeneral;
 
             // Impact armor first
             var dHealth = hullDamage - currentArmor;
