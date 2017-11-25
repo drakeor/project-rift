@@ -181,5 +181,47 @@ namespace ProjectRift.Entities.Ships.Tests
             BaseShip baseShip = new BaseShip();
             Assert.IsFalse(baseShip.ProcessDamage(int.MaxValue, int.MaxValue, int.MaxValue));
         }
+
+        [Test()]
+        public void GetEnergyTest()
+        {
+            BaseShip baseShip = new BaseShip();
+            Assert.Greater(baseShip.GetEnergy(), 0);
+        }
+
+        [Test()]
+        public void GetMaxEnergyTest()
+        {
+            BaseShip baseShip = new BaseShip();
+            Assert.Greater(baseShip.GetMaxEnergy(), 0);
+        }
+
+        [Test()]
+        public void GetFuelTest()
+        {
+            BaseShip baseShip = new BaseShip();
+            Assert.Greater(baseShip.GetFuel(), 0);
+        }
+
+        [Test()]
+        public void GetMaxFuelTest()
+        {
+            BaseShip baseShip = new BaseShip();
+            Assert.Greater(baseShip.GetMaxFuel(), 0);
+        }
+
+        [Test()]
+        public void UpdateTest()
+        {
+            BaseShip baseShip = new BaseShip();
+            Assert.IsFalse(baseShip.Update(0));
+        }
+
+        [Test()]
+        public void RenderTest()
+        {
+            BaseShip baseShip = new BaseShip();
+            baseShip.Render(0);
+        }
     }
 }

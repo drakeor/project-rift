@@ -15,12 +15,14 @@ namespace ProjectRift.Entities.Ships
         int baseMaxShields;
         int baseMaxArmor;
         int baseMaxHealth;
-        int baseEnergy;
+        int baseMaxEnergy;
+        int baseMaxFuel;
 
         int currentHealth;
         int currentArmor;
         int currentShields;
         int currentEnergy;
+        int currentFuel;
 
         public BaseShip()
         {
@@ -37,13 +39,14 @@ namespace ProjectRift.Entities.Ships
             this.baseMaxShields = maxShields;
             this.baseMaxArmor = maxArmor;
             this.baseMaxHealth = maxHealth;
-            this.baseEnergy = 100;
+            this.baseMaxEnergy = 100;
+            this.baseMaxFuel = 100;
 
             currentHealth = maxShields;
             currentArmor = maxArmor;
             currentShields = maxHealth;
             currentEnergy = 100;
-
+            currentFuel = 100;
         }
 
         public bool AddModule(IModule module)
@@ -171,12 +174,32 @@ namespace ProjectRift.Entities.Ships
 
         public int GetEnergy()
         {
-            throw new NotImplementedException();
+            return currentEnergy;
         }
 
         public int GetMaxEnergy()
         {
-            throw new NotImplementedException();
+            return baseMaxEnergy;
+        }
+
+        public int GetFuel()
+        {
+            return currentFuel;
+        }
+
+        public int GetMaxFuel()
+        {
+            return baseMaxFuel;
+        }
+
+        public bool Update(float deltaTime)
+        {
+            return false;
+        }
+
+        public void Render(float deltaTime)
+        {
+            
         }
     }
 }

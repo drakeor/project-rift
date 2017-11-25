@@ -20,6 +20,12 @@ namespace ProjectRift.Entities
         int GetEnergy();
         int GetMaxEnergy();
 
+        int GetFuel();
+        int GetMaxFuel();
+        
         bool ProcessDamage(int general, int shieldDam, int bleedThruDamage);
+
+        bool Update(float deltaTime);
+        void Render(float deltaTime);
     }
 }
