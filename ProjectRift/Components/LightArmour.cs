@@ -17,5 +17,15 @@ namespace ProjectRift.Components
         {
             return "Weak Armor";
         }
+
+        public override int GetArmorModifier()
+        {
+            return 100;
+        }
+
+        public override int GetCargoSize()
+        {
+            return 2;
+        }
     }
 }

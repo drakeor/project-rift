@@ -15,10 +15,12 @@ namespace ProjectRift.Entities.Ships
         int baseMaxShields;
         int baseMaxArmor;
         int baseMaxHealth;
+        int baseEnergy;
 
         int currentHealth;
         int currentArmor;
         int currentShields;
+        int currentEnergy;
 
         public BaseShip()
         {
@@ -35,10 +37,13 @@ namespace ProjectRift.Entities.Ships
             this.baseMaxShields = maxShields;
             this.baseMaxArmor = maxArmor;
             this.baseMaxHealth = maxHealth;
+            this.baseEnergy = 100;
 
             currentHealth = maxShields;
             currentArmor = maxArmor;
             currentShields = maxHealth;
+            currentEnergy = 100;
+
         }
 
         public bool AddModule(IModule module)
@@ -162,6 +167,16 @@ namespace ProjectRift.Entities.Ships
                 return false;
 
             return true;
+        }
+
+        public int GetEnergy()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetMaxEnergy()
+        {
+            throw new NotImplementedException();
         }
     }
 }

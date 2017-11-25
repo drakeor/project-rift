@@ -14,7 +14,7 @@ namespace ProjectRift.Components
             return 1000;
         }
 
-        public int GetCargoSize()
+        public virtual int GetCargoSize()
         {
             return 1;
         }
@@ -40,6 +40,11 @@ namespace ProjectRift.Components
         }
 
         public virtual int GetShieldModifier()
+        {
+            return 0;
+        }
+
+        public virtual int GetEnergyModifier()
         {
             return 0;
         }

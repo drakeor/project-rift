@@ -12,5 +12,6 @@ namespace ProjectRift.Components
         int GetShieldModifier();
         int GetArmorModifier();
         int GetHealthModifier();
+        int GetEnergyModifier();
     }
 }

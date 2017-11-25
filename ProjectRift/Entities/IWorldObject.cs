@@ -17,6 +17,9 @@ namespace ProjectRift.Entities
         int GetShield();
         int GetMaxShield();
 
+        int GetEnergy();
+        int GetMaxEnergy();
+
         bool ProcessDamage(int general, int shieldDam, int bleedThruDamage);
     }
 }

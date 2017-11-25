@@ -16,12 +16,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{3C3EF245-5
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wiki", "Wiki", "{1BFBC400-7314-4B42-AD45-2359180EB9A7}"
-	ProjectSection(SolutionItems) = preProject
-		Docs\Design.md = Docs\Design.md
-		Docs\Ships.md = Docs\Ships.md
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
