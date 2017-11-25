@@ -10,17 +10,10 @@ namespace ProjectRiftGameplay.Test.ShipCombat
 {
     public class MockShip : BaseShip
     {
-        public override int GetMaxShield()
+        public MockShip() :
+            base(10, 10, 10)
         {
-            return 10;
-        }
-        public override int GetMaxHealth()
-        {
-            return 10;
-        }
-        public override int GetMaxArmor()
-        {
-            return 10;
+
         }
     }
 

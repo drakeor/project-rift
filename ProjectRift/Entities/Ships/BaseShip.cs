@@ -11,15 +11,34 @@ namespace ProjectRift.Entities.Ships
     public class BaseShip : IShip
     {
         protected List<IModule> modules = new List<IModule>();
+
+        int baseMaxShields;
+        int baseMaxArmor;
+        int baseMaxHealth;
+
         int currentHealth;
         int currentArmor;
         int currentShields;
 
         public BaseShip()
         {
-            currentHealth = GetMaxHealth();
-            currentArmor = GetMaxArmor();
-            currentShields = GetMaxShield();
+            Initialize(100, 100, 100);
+        }
+
+        public BaseShip(int maxShields, int maxArmor, int maxHealth)
+        {
+            Initialize(maxShields, maxArmor, maxHealth);
+        }
+
+        private void Initialize(int maxShields, int maxArmor, int maxHealth)
+        {
+            this.baseMaxShields = maxShields;
+            this.baseMaxArmor = maxArmor;
+            this.baseMaxHealth = maxHealth;
+
+            currentHealth = maxShields;
+            currentArmor = maxArmor;
+            currentShields = maxHealth;
         }
 
         public bool AddModule(IModule module)
@@ -64,24 +83,24 @@ namespace ProjectRift.Entities.Ships
             return currentHealth;
         }
 
-        public virtual int GetMaxArmor()
+        public int GetMaxArmor()
         {
-            return 100;
+            return baseMaxArmor;
         }
 
-        public virtual int GetMaxCargoSpace()
+        public int GetMaxCargoSpace()
         {
             return 10;
         }
 
-        public virtual int GetMaxHealth()
+        public int GetMaxHealth()
         {
-            return 100;
+            return baseMaxHealth;
         }
 
-        public virtual int GetMaxShield()
+        public int GetMaxShield()
         {
-            return 100;
+            return baseMaxShields;
         }
 
         public string GetName()
